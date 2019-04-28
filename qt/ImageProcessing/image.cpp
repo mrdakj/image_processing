@@ -4,7 +4,7 @@ using namespace img;
 template<>
 void Image<Type::RGB>::bgr2rgb()
 {
-	cv::cvtColor(m_data, m_data, CV_BGR2RGB);
+    cv::cvtColor(m_data, m_data, cv::COLOR_BGR2RGB);
 }
 
 template <>

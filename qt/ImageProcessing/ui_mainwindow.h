@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.12.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,15 +10,12 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDockWidget>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpinBox>
@@ -66,19 +63,21 @@ public:
     QWidget *distortion;
     QVBoxLayout *verticalLayout_6;
     QPushButton *distortionButton;
-    QMenuBar *menuBar;
-    QMenu *menuIP;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QStringLiteral("MainWindow"));
+            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(781, 435);
         MainWindow->setMinimumSize(QSize(640, 405));
         QFont font;
         font.setPointSize(50);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(50);
         MainWindow->setFont(font);
-        MainWindow->setStyleSheet(QLatin1String("#MainWindow {\n"
+        MainWindow->setAutoFillBackground(false);
+        MainWindow->setStyleSheet(QString::fromUtf8("#MainWindow {\n"
 "	background:#333333;\n"
 "}\n"
 "\n"
@@ -101,21 +100,25 @@ public:
 "\n"
 "QMenuBar {\n"
 "	font: 75 14pt \"Terminus (TTF)\";\n"
+"	color : #1793D1;\n"
+"	background: #333333;\n"
 "}\n"
+"\n"
 ""));
+        MainWindow->setUnifiedTitleAndToolBarOnMac(false);
         centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        centralWidget->setStyleSheet(QLatin1String("#centralWidget{\n"
+        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setStyleSheet(QString::fromUtf8("#centralWidget{\n"
 "background:#333333;\n"
 "}"));
         verticalLayout_7 = new QVBoxLayout(centralWidget);
         verticalLayout_7->setSpacing(6);
         verticalLayout_7->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
         frame = new QFrame(centralWidget);
-        frame->setObjectName(QStringLiteral("frame"));
+        frame->setObjectName(QString::fromUtf8("frame"));
         frame->setToolTipDuration(-1);
-        frame->setStyleSheet(QLatin1String("#frame {\n"
+        frame->setStyleSheet(QString::fromUtf8("#frame {\n"
 "background:#333333;\n"
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
@@ -124,25 +127,20 @@ public:
         gridLayout = new QGridLayout(frame);
         gridLayout->setSpacing(0);
         gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(10, 10, 10, 10);
         displayImageLabel = new displayLabel(frame);
-        displayImageLabel->setObjectName(QStringLiteral("displayImageLabel"));
+        displayImageLabel->setObjectName(QString::fromUtf8("displayImageLabel"));
         QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(displayImageLabel->sizePolicy().hasHeightForWidth());
         displayImageLabel->setSizePolicy(sizePolicy);
         displayImageLabel->setMinimumSize(QSize(10, 10));
-        QFont font1;
-        font1.setPointSize(50);
-        font1.setBold(false);
-        font1.setItalic(false);
-        font1.setWeight(50);
-        displayImageLabel->setFont(font1);
+        displayImageLabel->setFont(font);
         displayImageLabel->setToolTipDuration(-1);
         displayImageLabel->setLayoutDirection(Qt::LeftToRight);
-        displayImageLabel->setStyleSheet(QLatin1String("#displayImageLabel{\n"
+        displayImageLabel->setStyleSheet(QString::fromUtf8("#displayImageLabel{\n"
 "	background:#333333;	\n"
 "	color : #1793D1;\n"
 "}"));
@@ -157,22 +155,22 @@ public:
 
         MainWindow->setCentralWidget(centralWidget);
         dockWidget = new QDockWidget(MainWindow);
-        dockWidget->setObjectName(QStringLiteral("dockWidget"));
-        dockWidget->setMinimumSize(QSize(200, 319));
+        dockWidget->setObjectName(QString::fromUtf8("dockWidget"));
+        dockWidget->setMinimumSize(QSize(200, 348));
         dockWidget->setAutoFillBackground(false);
-        dockWidget->setStyleSheet(QStringLiteral(""));
+        dockWidget->setStyleSheet(QString::fromUtf8(""));
         dockWidgetContents = new QWidget();
-        dockWidgetContents->setObjectName(QStringLiteral("dockWidgetContents"));
-        dockWidgetContents->setStyleSheet(QLatin1String("#dockWidgetContents {\n"
+        dockWidgetContents->setObjectName(QString::fromUtf8("dockWidgetContents"));
+        dockWidgetContents->setStyleSheet(QString::fromUtf8("#dockWidgetContents {\n"
 "background:#333333;\n"
 "}"));
         formLayout = new QFormLayout(dockWidgetContents);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
-        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
         toolBox = new QToolBox(dockWidgetContents);
-        toolBox->setObjectName(QStringLiteral("toolBox"));
-        toolBox->setStyleSheet(QLatin1String("\n"
+        toolBox->setObjectName(QString::fromUtf8("toolBox"));
+        toolBox->setStyleSheet(QString::fromUtf8("\n"
 "#toolBox {\n"
 "	background: #333333;\n"
 "}\n"
@@ -203,146 +201,138 @@ public:
 "}\n"
 ""));
         open_save = new QWidget();
-        open_save->setObjectName(QStringLiteral("open_save"));
-        open_save->setGeometry(QRect(0, 0, 182, 78));
-        open_save->setStyleSheet(QStringLiteral(""));
+        open_save->setObjectName(QString::fromUtf8("open_save"));
+        open_save->setGeometry(QRect(0, 0, 182, 102));
+        open_save->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_2 = new QVBoxLayout(open_save);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         openImageButton = new QPushButton(open_save);
-        openImageButton->setObjectName(QStringLiteral("openImageButton"));
+        openImageButton->setObjectName(QString::fromUtf8("openImageButton"));
         openImageButton->setAutoFillBackground(false);
-        openImageButton->setStyleSheet(QStringLiteral(""));
+        openImageButton->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_2->addWidget(openImageButton);
 
         saveImageButton = new QPushButton(open_save);
-        saveImageButton->setObjectName(QStringLiteral("saveImageButton"));
-        saveImageButton->setStyleSheet(QStringLiteral(""));
+        saveImageButton->setObjectName(QString::fromUtf8("saveImageButton"));
+        saveImageButton->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_2->addWidget(saveImageButton);
 
-        toolBox->addItem(open_save, QStringLiteral("Open/Save"));
+        toolBox->addItem(open_save, QString::fromUtf8("Open/Save"));
         binarization = new QWidget();
-        binarization->setObjectName(QStringLiteral("binarization"));
-        binarization->setGeometry(QRect(0, 0, 182, 78));
-        binarization->setStyleSheet(QStringLiteral(""));
+        binarization->setObjectName(QString::fromUtf8("binarization"));
+        binarization->setGeometry(QRect(0, 0, 182, 102));
+        binarization->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_3 = new QVBoxLayout(binarization);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         binarizeKmeansButton = new QPushButton(binarization);
-        binarizeKmeansButton->setObjectName(QStringLiteral("binarizeKmeansButton"));
+        binarizeKmeansButton->setObjectName(QString::fromUtf8("binarizeKmeansButton"));
 
         verticalLayout_3->addWidget(binarizeKmeansButton);
 
         binarizeFcmButton = new QPushButton(binarization);
-        binarizeFcmButton->setObjectName(QStringLiteral("binarizeFcmButton"));
+        binarizeFcmButton->setObjectName(QString::fromUtf8("binarizeFcmButton"));
 
         verticalLayout_3->addWidget(binarizeFcmButton);
 
-        toolBox->addItem(binarization, QStringLiteral("Binarization"));
+        toolBox->addItem(binarization, QString::fromUtf8("Binarization"));
         poster = new QWidget();
-        poster->setObjectName(QStringLiteral("poster"));
-        poster->setGeometry(QRect(0, 0, 182, 80));
-        poster->setStyleSheet(QStringLiteral(""));
+        poster->setObjectName(QString::fromUtf8("poster"));
+        poster->setGeometry(QRect(0, 0, 182, 102));
+        poster->setStyleSheet(QString::fromUtf8(""));
         gridLayout_2 = new QGridLayout(poster);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         posterizeButton = new QPushButton(poster);
-        posterizeButton->setObjectName(QStringLiteral("posterizeButton"));
+        posterizeButton->setObjectName(QString::fromUtf8("posterizeButton"));
 
         gridLayout_2->addWidget(posterizeButton, 1, 0, 1, 1);
 
         posterSpinBox = new QSpinBox(poster);
-        posterSpinBox->setObjectName(QStringLiteral("posterSpinBox"));
+        posterSpinBox->setObjectName(QString::fromUtf8("posterSpinBox"));
         posterSpinBox->setMinimum(2);
 
         gridLayout_2->addWidget(posterSpinBox, 0, 0, 1, 1);
 
-        toolBox->addItem(poster, QStringLiteral("Posterize"));
+        toolBox->addItem(poster, QString::fromUtf8("Posterize"));
         edge_detection = new QWidget();
-        edge_detection->setObjectName(QStringLiteral("edge_detection"));
+        edge_detection->setObjectName(QString::fromUtf8("edge_detection"));
         edge_detection->setGeometry(QRect(0, 0, 182, 120));
-        edge_detection->setStyleSheet(QStringLiteral(""));
+        edge_detection->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_4 = new QVBoxLayout(edge_detection);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         cannySlider = new QSlider(edge_detection);
-        cannySlider->setObjectName(QStringLiteral("cannySlider"));
-        cannySlider->setStyleSheet(QStringLiteral(""));
+        cannySlider->setObjectName(QString::fromUtf8("cannySlider"));
+        cannySlider->setStyleSheet(QString::fromUtf8(""));
         cannySlider->setMaximum(50);
         cannySlider->setOrientation(Qt::Horizontal);
 
         verticalLayout_4->addWidget(cannySlider);
 
         cannyButton = new QPushButton(edge_detection);
-        cannyButton->setObjectName(QStringLiteral("cannyButton"));
+        cannyButton->setObjectName(QString::fromUtf8("cannyButton"));
 
         verticalLayout_4->addWidget(cannyButton);
 
         fuzzySlider = new QSlider(edge_detection);
-        fuzzySlider->setObjectName(QStringLiteral("fuzzySlider"));
+        fuzzySlider->setObjectName(QString::fromUtf8("fuzzySlider"));
         fuzzySlider->setOrientation(Qt::Horizontal);
 
         verticalLayout_4->addWidget(fuzzySlider);
 
         fuzzyButton = new QPushButton(edge_detection);
-        fuzzyButton->setObjectName(QStringLiteral("fuzzyButton"));
+        fuzzyButton->setObjectName(QString::fromUtf8("fuzzyButton"));
 
         verticalLayout_4->addWidget(fuzzyButton);
 
-        toolBox->addItem(edge_detection, QStringLiteral("Edge detection"));
+        toolBox->addItem(edge_detection, QString::fromUtf8("Edge detection"));
         compression = new QWidget();
-        compression->setObjectName(QStringLiteral("compression"));
-        compression->setGeometry(QRect(0, 0, 182, 80));
-        compression->setStyleSheet(QStringLiteral(""));
+        compression->setObjectName(QString::fromUtf8("compression"));
+        compression->setGeometry(QRect(0, 0, 182, 102));
+        compression->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_5 = new QVBoxLayout(compression);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         pcaSpinBox = new QSpinBox(compression);
-        pcaSpinBox->setObjectName(QStringLiteral("pcaSpinBox"));
+        pcaSpinBox->setObjectName(QString::fromUtf8("pcaSpinBox"));
         pcaSpinBox->setMinimum(2);
 
         verticalLayout_5->addWidget(pcaSpinBox);
 
         pcaButton = new QPushButton(compression);
-        pcaButton->setObjectName(QStringLiteral("pcaButton"));
+        pcaButton->setObjectName(QString::fromUtf8("pcaButton"));
 
         verticalLayout_5->addWidget(pcaButton);
 
-        toolBox->addItem(compression, QStringLiteral("Compression"));
+        toolBox->addItem(compression, QString::fromUtf8("Compression"));
         distortion = new QWidget();
-        distortion->setObjectName(QStringLiteral("distortion"));
-        distortion->setGeometry(QRect(0, 0, 182, 68));
-        distortion->setStyleSheet(QStringLiteral(""));
+        distortion->setObjectName(QString::fromUtf8("distortion"));
+        distortion->setGeometry(QRect(0, 0, 182, 102));
+        distortion->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_6 = new QVBoxLayout(distortion);
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         distortionButton = new QPushButton(distortion);
-        distortionButton->setObjectName(QStringLiteral("distortionButton"));
+        distortionButton->setObjectName(QString::fromUtf8("distortionButton"));
 
         verticalLayout_6->addWidget(distortionButton);
 
-        toolBox->addItem(distortion, QStringLiteral("Distortion"));
+        toolBox->addItem(distortion, QString::fromUtf8("Distortion"));
 
         formLayout->setWidget(0, QFormLayout::SpanningRole, toolBox);
 
         dockWidget->setWidget(dockWidgetContents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(1), dockWidget);
-        menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 781, 26));
-        menuIP = new QMenu(menuBar);
-        menuIP->setObjectName(QStringLiteral("menuIP"));
-        MainWindow->setMenuBar(menuBar);
-
-        menuBar->addAction(menuIP->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -354,7 +344,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", ">_ImageProcessing", nullptr));
         displayImageLabel->setText(QApplication::translate("MainWindow", "\357\200\276", nullptr));
         openImageButton->setText(QApplication::translate("MainWindow", "Open \357\201\274", nullptr));
         saveImageButton->setText(QApplication::translate("MainWindow", "Save \357\203\207", nullptr));
@@ -371,7 +361,6 @@ public:
         toolBox->setItemText(toolBox->indexOf(compression), QApplication::translate("MainWindow", "Compression", nullptr));
         distortionButton->setText(QApplication::translate("MainWindow", "start", nullptr));
         toolBox->setItemText(toolBox->indexOf(distortion), QApplication::translate("MainWindow", "Distortion", nullptr));
-        menuIP->setTitle(QApplication::translate("MainWindow", "\357\204\240 ImageProcessing", nullptr));
     } // retranslateUi
 
 };

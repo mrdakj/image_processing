@@ -19,10 +19,16 @@
   <property name="font">
    <font>
     <pointsize>50</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>&gt;_ImageProcessing</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">#MainWindow {
@@ -48,8 +54,14 @@ QPushButton:hover {
 
 QMenuBar {
 	font: 75 14pt &quot;Terminus (TTF)&quot;;
+	color : #1793D1;
+	background: #333333;
 }
+
 </string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
@@ -150,7 +162,7 @@ background:#333333;
    <property name="minimumSize">
     <size>
      <width>200</width>
-     <height>319</height>
+     <height>348</height>
     </size>
    </property>
    <property name="autoFillBackground">
@@ -212,7 +224,7 @@ QPushButton:hover {
           <x>0</x>
           <y>0</y>
           <width>182</width>
-          <height>78</height>
+          <height>102</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -253,7 +265,7 @@ QPushButton:hover {
           <x>0</x>
           <y>0</y>
           <width>182</width>
-          <height>78</height>
+          <height>102</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -285,7 +297,7 @@ QPushButton:hover {
           <x>0</x>
           <y>0</y>
           <width>182</width>
-          <height>80</height>
+          <height>102</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -369,7 +381,7 @@ QPushButton:hover {
           <x>0</x>
           <y>0</y>
           <width>182</width>
-          <height>80</height>
+          <height>102</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -401,7 +413,7 @@ QPushButton:hover {
           <x>0</x>
           <y>0</y>
           <width>182</width>
-          <height>68</height>
+          <height>102</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -424,22 +436,6 @@ QPushButton:hover {
      </item>
     </layout>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>781</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuIP">
-    <property name="title">
-     <string> ImageProcessing</string>
-    </property>
-   </widget>
-   <addaction name="menuIP"/>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

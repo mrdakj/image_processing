@@ -5,8 +5,17 @@ image processing
 
 ***
 ## :package: Installation
-:exclamation: Requirements: OpenCV, Qt, Font Awesome
+:exclamation: Requirements: OpenCV (hdf5, vtk), Qt, Font Awesome
 
+OpenCV: https://github.com/opencv/opencv
+```sh
+git clone https://github.com/opencv/opencv 
+cd opencv
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=Release -D OPENCV_GENERATE_PKGCONFIG=YES -D CMAKE_INSTALL_PREFIX=/usr/local -WITH_QT ..
+make install
+```
 
 ### Manual
 
