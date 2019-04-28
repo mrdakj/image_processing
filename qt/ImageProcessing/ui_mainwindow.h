@@ -10,12 +10,15 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDockWidget>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpinBox>
@@ -63,6 +66,8 @@ public:
     QWidget *distortion;
     QVBoxLayout *verticalLayout_6;
     QPushButton *distortionButton;
+    QMenuBar *menuBar;
+    QMenu *menuIP;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -333,6 +338,14 @@ public:
 
         dockWidget->setWidget(dockWidgetContents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(1), dockWidget);
+        menuBar = new QMenuBar(MainWindow);
+        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 781, 32));
+        menuIP = new QMenu(menuBar);
+        menuIP->setObjectName(QString::fromUtf8("menuIP"));
+        MainWindow->setMenuBar(menuBar);
+
+        menuBar->addAction(menuIP->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -361,6 +374,7 @@ public:
         toolBox->setItemText(toolBox->indexOf(compression), QApplication::translate("MainWindow", "Compression", nullptr));
         distortionButton->setText(QApplication::translate("MainWindow", "start", nullptr));
         toolBox->setItemText(toolBox->indexOf(distortion), QApplication::translate("MainWindow", "Distortion", nullptr));
+        menuIP->setTitle(QApplication::translate("MainWindow", ">_ ImageProcessing", nullptr));
     } // retranslateUi
 
 };

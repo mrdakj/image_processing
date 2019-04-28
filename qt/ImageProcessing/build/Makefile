@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O3 -std=c++17 -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../../ImageProcessing -I. -isystem /usr/include/opencv4/opencv -isystem /usr/include/opencv4 -isystem /usr/include/qt -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/qt/mkspecs/linux-g++
+INCPATH       = -I../../ImageProcessing -I. -isystem /usr/include/opencv4 -isystem /usr/include/qt -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/qt/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = ImageProcessing1.0.0
 DISTDIR = /home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing/build/.tmp/ImageProcessing1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now
-LIBS          = $(SUBLIBS) -lstdc++fs -I/usr/include/opencv4/opencv -I/usr/include/opencv4 -L/usr/lib64 -lopencv_dnn -lopencv_gapi -lopencv_highgui -lopencv_ml -lopencv_objdetect -lopencv_photo -lopencv_stitching -lopencv_video -lopencv_calib3d -lopencv_features2d -lopencv_flann -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lQt5Widgets -lQt5Gui -lQt5Core /usr/lib/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) -lstdc++fs `pkg-config opencv4 --cflags --libs` -pthread -lQt5Widgets -lQt5Gui -lQt5Core /usr/lib/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -586,9 +586,9 @@ Makefile: ../ImageProcessing.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/l
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		../ImageProcessing.pro \
-		/usr/lib64/libQt5Widgets.prl \
-		/usr/lib64/libQt5Gui.prl \
-		/usr/lib64/libQt5Core.prl
+		/usr/lib/libQt5Widgets.prl \
+		/usr/lib/libQt5Gui.prl \
+		/usr/lib/libQt5Core.prl
 	$(QMAKE) -o Makefile ../ImageProcessing.pro
 /usr/lib/qt/mkspecs/features/spec_pre.prf:
 /usr/lib/qt/mkspecs/common/unix.conf:
@@ -830,9 +830,9 @@ Makefile: ../ImageProcessing.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/l
 /usr/lib/qt/mkspecs/features/yacc.prf:
 /usr/lib/qt/mkspecs/features/lex.prf:
 ../ImageProcessing.pro:
-/usr/lib64/libQt5Widgets.prl:
-/usr/lib64/libQt5Gui.prl:
-/usr/lib64/libQt5Core.prl:
+/usr/lib/libQt5Widgets.prl:
+/usr/lib/libQt5Gui.prl:
+/usr/lib/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../ImageProcessing.pro
 
@@ -888,12 +888,12 @@ moc_mainwindow.cpp: ../mainwindow.h \
 		../image.hpp \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include /home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing -I/usr/include/opencv4/opencv -I/usr/include/opencv4 -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include ../mainwindow.h -o moc_mainwindow.cpp
+	/usr/bin/moc $(DEFINES) --include /home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing -I/usr/include/opencv4 -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include ../mainwindow.h -o moc_mainwindow.cpp
 
 moc_displaylabel.cpp: ../displaylabel.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include /home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing -I/usr/include/opencv4/opencv -I/usr/include/opencv4 -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include ../displaylabel.h -o moc_displaylabel.cpp
+	/usr/bin/moc $(DEFINES) --include /home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jelena/Documents/GitHub/image_processing/qt/ImageProcessing -I/usr/include/opencv4 -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include ../displaylabel.h -o moc_displaylabel.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

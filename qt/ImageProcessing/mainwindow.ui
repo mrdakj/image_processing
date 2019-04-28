@@ -437,6 +437,22 @@ QPushButton:hover {
     </layout>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>781</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuIP">
+    <property name="title">
+     <string>&gt;_ ImageProcessing</string>
+    </property>
+   </widget>
+   <addaction name="menuIP"/>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
