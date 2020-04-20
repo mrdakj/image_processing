@@ -1,7 +1,7 @@
 #include "image.hpp"
 #include <numeric>
 #include <mutex>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 typedef Eigen::Matrix<unsigned long long, 3, 1> vec3;
 // typedef cv::Vec3i vec3; // overflow problem

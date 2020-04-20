@@ -1,7 +1,7 @@
 #include "image.hpp"
 #include <numeric>
 #include <mutex>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 class kmeans {
 public:

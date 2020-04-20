@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>781</width>
-    <height>435</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>640</width>
-    <height>405</height>
+    <height>480</height>
    </size>
   </property>
   <property name="font">
@@ -56,6 +56,7 @@ QMenuBar {
 	font: 75 14pt &quot;Terminus (TTF)&quot;;
 	color : #1793D1;
 	background: #333333;
+    font-weight:bold;
 }
 
 </string>
@@ -105,7 +106,7 @@ background:#333333;
        <property name="spacing">
         <number>0</number>
        </property>
-       <item row="0" column="0">
+       <item row="0" column="1">
         <widget class="displayLabel" name="displayImageLabel">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
@@ -162,7 +163,7 @@ background:#333333;
    <property name="minimumSize">
     <size>
      <width>200</width>
-     <height>348</height>
+     <height>432</height>
     </size>
    </property>
    <property name="autoFillBackground">
@@ -218,6 +219,9 @@ QPushButton:hover {
        <property name="currentIndex">
         <number>0</number>
        </property>
+       <property name="tabSpacing">
+        <number>10</number>
+       </property>
        <widget class="QWidget" name="open_save">
         <property name="geometry">
          <rect>
@@ -234,6 +238,12 @@ QPushButton:hover {
          <string>Open/Save</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
          <item>
           <widget class="QPushButton" name="openImageButton">
            <property name="autoFillBackground">
@@ -430,9 +440,35 @@ QPushButton:hover {
            </property>
           </widget>
          </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
         </layout>
        </widget>
       </widget>
+     </item>
+     <item row="1" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </widget>
@@ -446,12 +482,19 @@ QPushButton:hover {
      <height>32</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuIP">
+   <property name="styleSheet">
+    <string notr="true">QMenuBar::item { 
+	color : #1793D1;
+	background:#333333;
+	font:  &quot;Terminus (TTF)&quot;;
+ }</string>
+   </property>
+   <widget class="QMenu" name="menu_ImageProcessing">
     <property name="title">
      <string>&gt;_ ImageProcessing</string>
     </property>
    </widget>
-   <addaction name="menuIP"/>
+   <addaction name="menu_ImageProcessing"/>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

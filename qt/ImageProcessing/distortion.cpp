@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <Eigen/Eigenvalues>
+#include <eigen3/Eigen/Eigenvalues>
 #include "distortion.hpp"
 
 static Eigen::MatrixXd M(3,4);

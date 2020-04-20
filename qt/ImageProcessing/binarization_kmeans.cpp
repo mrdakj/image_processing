@@ -1,7 +1,7 @@
 #include "binarization.hpp"
 #include <numeric>
 #include <mutex>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 // k-means algorithm for image binarization
 class kmeans {
